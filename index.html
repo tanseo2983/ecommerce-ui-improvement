@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo thiết kế lại thẻ sản phẩm trong danh mục Laptop của Thế Giới Di Động bằng HTML5 và CSS3.">
+  <title>Laptop | Demo thẻ sản phẩm</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Các icon dùng chung, không cần thư viện bên ngoài. -->
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="icon-cpu" viewBox="0 0 24 24">
+        <rect x="5" y="5" width="14" height="14" rx="1"/>
+        <path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4M9 9h6v6H9z"/>
+      </symbol>
+      <symbol id="icon-gpu" viewBox="0 0 24 24">
+        <path d="M2 5h19v13H2zM5 18v3m4-3v3m4-3v3m4-3v3M21 8h2m-2 5h2"/>
+        <circle cx="9" cy="11.5" r="3.5"/>
+        <path d="M16 9h2m-2 5h2"/>
+      </symbol>
+      <symbol id="icon-ram" viewBox="0 0 24 24">
+        <path d="M2 5h20v12H2zM5 17v4m5-4v4m5-4v4m5-4v4M6 9v4m6-4v4m6-4v4"/>
+      </symbol>
+      <symbol id="icon-storage" viewBox="0 0 24 24">
+        <rect x="4" y="2" width="16" height="20" rx="1"/>
+        <circle cx="12" cy="10" r="4"/>
+        <path d="m12 10 3 3M8 18h4m4 0h.01"/>
+      </symbol>
+      <symbol id="icon-weight" viewBox="0 0 24 24">
+        <path d="M7 8h10l4 13H3L7 8Z"/>
+        <circle cx="12" cy="5" r="3"/>
+      </symbol>
+      <symbol id="icon-screen" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="1"/>
+        <path d="M12 17v4m-5 0h10"/>
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 7v10m-5-5h10"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <span class="brand" aria-label="Thế Giới Di Động">thegioididong<span class="brand-domain">.com</span></span>
+      <span class="header-caption">Demo thiết kế thẻ sản phẩm</span>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="catalog-heading">
+        <div>
+          <h1 id="catalog-title">Laptop</h1>
+          <p class="catalog-note">Thiết kế lại danh mục Laptop của Thế Giới Di Động. Giá và ưu đãi là dữ liệu minh họa.</p>
+        </div>
+        <span class="product-count">4 sản phẩm</span>
+      </div>
+
+      <div class="product-grid">
+        <!-- Sản phẩm chính. Các thẻ bên dưới dùng cùng cấu trúc và class. -->
+        <article class="product-card" aria-labelledby="macbook-title">
+          <div class="product-visual">
+            <div class="product-badges">
+              <span class="discount-ribbon">Giảm 10%</span>
+              <span class="installment-badge">Trả chậm 0% trả trước 0đ</span>
+            </div>
+            <!-- Nguồn ảnh thân máy: https://www.thegioididong.com/laptop/macbook-air-15-inch-m5-16gb-512gb-70w -->
+            <img class="product-image product-image-macbook" src="images/macbook-air-15-m5.png" width="1200" height="1200" alt="MacBook Air màu xanh nhạt nhìn trực diện, màn hình có đồ họa cánh hoa xanh và thân máy mỏng bên dưới" fetchpriority="high">
+          </div>
+
+          <div class="product-content">
+            <h2 class="product-name" id="macbook-title">
+  MacBook Air 15 inch M5 16GB/<span class="storage-512">512GB</span><span class="storage-1tb">1 TB</span> 35W
+</h2>
+            <div class="product-pricing" aria-label="Giá sản phẩm">
+              <p class="current-price">37.791.000 đ</p>
+              <p class="original-price-row"><del>41.990.000 đ</del><span class="discount-percent">-10%</span></p>
+            </div>
+            <p class="product-rating"><span class="rating-star" aria-hidden="true">★</span><span aria-label="Đánh giá 5 trên 5 sao">5</span><span class="rating-separator" aria-hidden="true">·</span><span class="sold-count">Đã bán 7,2k</span></p>
+
+            <!-- Có thể thêm một .promotion thứ ba vào nhóm này. -->
+            <div class="product-promotions" aria-label="Ưu đãi thêm, tách riêng mức giảm đã tính vào giá bán">
+              <p class="promotion promotion-member">Member Friendly giảm đến <strong>280.000đ</strong></p>
+              <p class="promotion promotion-student">Hế Lô XINH VIÊN giảm thêm <strong>1.000.000đ</strong></p>
+            </div>
+
+            <div class="product-options">
+  <fieldset class="storage-options">
+    <legend class="storage-label">Dung lượng SSD</legend>
+
+    <div class="storage-list">
+      <label class="storage-option">
+        <input class="visually-hidden" type="radio"
+               name="macbook-storage" value="512gb" checked>
+        <span>512 GB</span>
+      </label>
+
+      <label class="storage-option">
+        <input class="visually-hidden" type="radio"
+               name="macbook-storage" value="1tb">
+        <span>1 TB</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <ul class="product-colors" aria-label="Màu sắc minh họa">
+    <li class="color-swatch color-silver"
+        aria-label="Trắng bạc nhạt" title="Trắng bạc nhạt"></li>
+    <li class="color-swatch color-blue-gray"
+        aria-label="Xám xanh" title="Xám xanh"></li>
+  </ul>
+</div>
+
+
+            <div class="product-gift" aria-label="Quà tặng minh họa">
+              <!-- Nguồn ảnh balo: https://www.thegioididong.com/tui-chong-soc/balo-laptop-15-6-inch-togo-tgb05 -->
+              <div class="gift-thumbnail"><img src="images/balo-den.jpg" width="44" height="44" alt="Balo laptop màu đen"></div>
+            </div>
+
+            <div class="product-actions" aria-label="Thao tác với MacBook Air" aria-describedby="demo-actions-note">
+              <button class="button button-cart" type="button" aria-label="Thêm MacBook Air vào giỏ">Thêm vào giỏ</button>
+              <button class="button button-compare" type="button" aria-label="So sánh MacBook Air"><svg class="compare-icon" aria-hidden="true"><use href="#icon-plus"/></svg><span>So sánh</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="asus-title">
+          <div class="product-visual">
+            <div class="product-badges">
+              <span class="discount-ribbon">Giảm 20%</span>
+              <span class="installment-badge">Trả chậm 0% trả trước 0đ</span>
+            </div>
+            <!-- Nguồn ảnh: https://www.thegioididong.com/laptop/asus-vivobook-15-oled-a1505va-i5-ma467w -->
+            <img class="product-image" src="images/asus-vivobook-15-oled.jpg" width="1020" height="680" alt="ASUS Vivobook 15 OLED mở màn hình, thân máy màu xám đen và hình nền nhiều màu">
+          </div>
+
+          <div class="product-content">
+            <h2 class="product-name" id="asus-title">ASUS Vivobook 15 OLED A1505VA i5 16GB/512GB</h2>
+
+            <div class="product-pricing" aria-label="Giá sản phẩm">
+              <p class="current-price">18.392.000 đ</p>
+              <p class="original-price-row"><del>22.990.000 đ</del><span class="discount-percent">-20%</span></p>
+            </div>
+            <p class="product-rating"><span class="rating-star" aria-hidden="true">★</span><span aria-label="Đánh giá 4,9 trên 5 sao">4,9</span><span class="rating-separator" aria-hidden="true">·</span><span class="sold-count">Đã bán 3,1k</span></p>
+
+            <div class="product-promotions" aria-label="Ưu đãi thêm, tách riêng mức giảm đã tính vào giá bán">
+              <p class="promotion promotion-member">Member Friendly giảm đến <strong>200.000đ</strong></p>
+              <p class="promotion promotion-student">Hế Lô XINH VIÊN giảm thêm <strong>500.000đ</strong></p>
+            </div>
+
+            <div class="product-options">
+              <p class="product-configuration">16GB/512GB · OLED</p>
+              <ul class="product-colors" aria-label="Màu sắc minh họa">
+                <li class="color-swatch color-silver" aria-label="Bạc" title="Bạc"></li>
+                <li class="color-swatch color-black" aria-label="Đen" title="Đen"></li>
+              </ul>
+            </div>
+
+            <div class="product-specs" aria-label="Thông số kỹ thuật">
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-cpu"/></svg><span><span class="visually-hidden">CPU </span>i5-13500H</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-gpu"/></svg><span>Intel Iris Xe</span></span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-ram"/></svg><span><span class="visually-hidden">RAM </span>16GB</span></span>
+                <span>
+  <span class="visually-hidden">SSD </span>
+  <span class="storage-512">512GB</span><span class="storage-1tb">1 TB</span>
+</span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-weight"/></svg><span>1.70 kg</span></span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-screen"/></svg><span>15.6″ 2.8K / OLED</span></span>
+              </div>
+            </div>
+
+            <div class="product-gift" aria-label="Quà tặng minh họa">
+              <div class="gift-thumbnail"><img src="images/balo-den.jpg" width="44" height="44" alt="Balo laptop màu đen"></div>
+            </div>
+
+            <div class="product-actions" aria-label="Thao tác với ASUS Vivobook" aria-describedby="demo-actions-note">
+              <button class="button button-cart" type="button" aria-label="Thêm ASUS Vivobook vào giỏ">Thêm vào giỏ</button>
+              <button class="button button-compare" type="button" aria-label="So sánh ASUS Vivobook"><svg class="compare-icon" aria-hidden="true"><use href="#icon-plus"/></svg><span>So sánh</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="hp-title">
+          <div class="product-visual">
+            <div class="product-badges">
+              <span class="discount-ribbon">Giảm 10%</span>
+              <span class="installment-badge">Trả chậm 0% trả trước 0đ</span>
+            </div>
+            <!-- Nguồn ảnh: https://www.thegioididong.com/laptop/hp-pavilion-15-eg3093tu-i5-8c5l4pa -->
+            <img class="product-image" src="images/hp-pavilion-15.jpg" width="600" height="400" alt="HP Pavilion 15 màu bạc, góc nhìn phía trước khi mở máy và mặt lưng">
+          </div>
+
+          <div class="product-content">
+            <h2 class="product-name" id="hp-title">HP Pavilion 15 eg3093TU i5 16GB/512GB</h2>
+
+            <div class="product-pricing" aria-label="Giá sản phẩm">
+              <p class="current-price">17.991.000 đ</p>
+              <p class="original-price-row"><del>19.990.000 đ</del><span class="discount-percent">-10%</span></p>
+            </div>
+            <p class="product-rating"><span class="rating-star" aria-hidden="true">★</span><span aria-label="Đánh giá 4,9 trên 5 sao">4,9</span><span class="rating-separator" aria-hidden="true">·</span><span class="sold-count">Đã bán 2,4k</span></p>
+
+            <div class="product-promotions" aria-label="Ưu đãi thêm, tách riêng mức giảm đã tính vào giá bán">
+              <p class="promotion promotion-member">Member Friendly giảm đến <strong>180.000đ</strong></p>
+              <p class="promotion promotion-student">Hế Lô XINH VIÊN giảm thêm <strong>500.000đ</strong></p>
+            </div>
+
+            <div class="product-options">
+              <p class="product-configuration">16GB/512GB · Win 11</p>
+              <ul class="product-colors" aria-label="Màu sắc minh họa">
+                <li class="color-swatch color-silver" aria-label="Bạc" title="Bạc"></li>
+                <li class="color-swatch color-gold" aria-label="Vàng nhạt" title="Vàng nhạt"></li>
+              </ul>
+            </div>
+
+            <div class="product-specs" aria-label="Thông số kỹ thuật">
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-cpu"/></svg><span><span class="visually-hidden">CPU </span>i5-1335U</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-gpu"/></svg><span>Intel Iris Xe</span></span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-ram"/></svg><span><span class="visually-hidden">RAM </span>16GB</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-storage"/></svg><span><span class="visually-hidden">SSD </span>512GB</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-weight"/></svg><span>1.74 kg</span></span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-screen"/></svg><span>15.6″ Full HD / IPS</span></span>
+              </div>
+            </div>
+
+            <div class="product-gift" aria-label="Quà tặng minh họa">
+              <div class="gift-thumbnail"><img src="images/balo-den.jpg" width="44" height="44" alt="Balo laptop màu đen"></div>
+            </div>
+
+            <div class="product-actions" aria-label="Thao tác với HP Pavilion" aria-describedby="demo-actions-note">
+              <button class="button button-cart" type="button" aria-label="Thêm HP Pavilion vào giỏ">Thêm vào giỏ</button>
+              <button class="button button-compare" type="button" aria-label="So sánh HP Pavilion"><svg class="compare-icon" aria-hidden="true"><use href="#icon-plus"/></svg><span>So sánh</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="dell-title">
+          <div class="product-visual">
+            <div class="product-badges">
+              <span class="discount-ribbon">Giảm 15%</span>
+              <span class="installment-badge">Trả chậm 0% trả trước 0đ</span>
+            </div>
+            <!-- Nguồn ảnh: https://www.thegioididong.com/laptop/dell-inspiron-15-3530-i5-n3530i5u165w11slu -->
+            <img class="product-image" src="images/dell-inspiron-15.jpg" width="1020" height="680" alt="Dell Inspiron 15 3530 màu bạc mở màn hình với hình nền Windows màu xanh">
+          </div>
+
+          <div class="product-content">
+            <h2 class="product-name" id="dell-title">Dell Inspiron 15 3530 i5 16GB/512GB</h2>
+
+            <div class="product-pricing" aria-label="Giá sản phẩm">
+              <p class="current-price">17.841.500 đ</p>
+              <p class="original-price-row"><del>20.990.000 đ</del><span class="discount-percent">-15%</span></p>
+            </div>
+            <p class="product-rating"><span class="rating-star" aria-hidden="true">★</span><span aria-label="Đánh giá 4,8 trên 5 sao">4,8</span><span class="rating-separator" aria-hidden="true">·</span><span class="sold-count">Đã bán 1,8k</span></p>
+
+            <div class="product-promotions" aria-label="Ưu đãi thêm, tách riêng mức giảm đã tính vào giá bán">
+              <p class="promotion promotion-member">Member Friendly giảm đến <strong>150.000đ</strong></p>
+              <p class="promotion promotion-student">Hế Lô XINH VIÊN giảm thêm <strong>700.000đ</strong></p>
+            </div>
+
+            <div class="product-options">
+              <p class="product-configuration">16GB/512GB · 120Hz</p>
+              <ul class="product-colors" aria-label="Màu sắc minh họa">
+                <li class="color-swatch color-silver" aria-label="Bạc" title="Bạc"></li>
+                <li class="color-swatch color-black" aria-label="Đen" title="Đen"></li>
+              </ul>
+            </div>
+
+            <div class="product-specs" aria-label="Thông số kỹ thuật">
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-cpu"/></svg><span><span class="visually-hidden">CPU </span>i5-1334U</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-gpu"/></svg><span>Intel Iris Xe</span></span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-ram"/></svg><span><span class="visually-hidden">RAM </span>16GB</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-storage"/></svg><span><span class="visually-hidden">SSD </span>512GB</span></span>
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-weight"/></svg><span>1.66 kg</span></span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-item"><svg class="spec-icon" aria-hidden="true"><use href="#icon-screen"/></svg><span>15.6″ Full HD / 120Hz</span></span>
+              </div>
+            </div>
+
+            <div class="product-gift" aria-label="Quà tặng minh họa">
+              <div class="gift-thumbnail"><img src="images/balo-den.jpg" width="44" height="44" alt="Balo laptop màu đen"></div>
+            </div>
+
+            <div class="product-actions" aria-label="Thao tác với Dell Inspiron" aria-describedby="demo-actions-note">
+              <button class="button button-cart" type="button" aria-label="Thêm Dell Inspiron vào giỏ">Thêm vào giỏ</button>
+              <button class="button button-compare" type="button" aria-label="So sánh Dell Inspiron"><svg class="compare-icon" aria-hidden="true"><use href="#icon-plus"/></svg><span>So sánh</span></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="demo-footer">
+      <p id="demo-actions-note">“Thêm vào giỏ” và “So sánh” là các nút minh họa giao diện trong bài HTML/CSS.</p>
+    </footer>
+  </main>
+</body>
+</html>
